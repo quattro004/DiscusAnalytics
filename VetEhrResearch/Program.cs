@@ -26,8 +26,16 @@ namespace VetEhrResearch
                 Console.WriteLine("There are {0} pets that are male.", results.NumberOfMalePets);
                 Console.WriteLine("There are {0} pets that have 4 legs.", results.NumberOfPetsWith4Legs);
                 Console.WriteLine("The average age of dogs is {0}.", results.AverageAgeOfDogs);
-                Console.WriteLine("All the repile problems are:\r\n{0}", results.ReptileProblems);
-                Console.WriteLine("The names of all mammal pets are:\r\n{0}", results.NumberOfMalePets);
+                Console.WriteLine("All the repile problems are:");
+                foreach (var reptileProblem in results.ReptileProblems)
+                {
+                    Console.WriteLine(reptileProblem);
+                }
+                Console.WriteLine("The names of all mammal pets are:");
+                foreach (var mammalName in results.MammalNames)
+                {
+                    Console.WriteLine(mammalName);
+                }
             }
             catch (Exception exc)
             {

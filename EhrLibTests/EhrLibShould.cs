@@ -83,6 +83,11 @@ namespace EhrLibTests
 
             results.NumberOfMalePets.Should().Be(6);
             results.NumberOfPetsWith4Legs.Should().Be(5);
+            results.AverageAgeOfDogs.Should().Be(5.333333333333333D);
+            results.ReptileProblems.Should().NotBeNullOrEmpty();
+            results.ReptileProblems.Count().Should().Be(2);
+            results.MammalNames.Should().NotBeNullOrEmpty();
+            results.MammalNames.Count().Should().Be(5);
         }
     }
 }

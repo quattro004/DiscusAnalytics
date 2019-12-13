@@ -36,12 +36,12 @@ namespace EhrLib
                     var numberOfMalePets = petData.Count(p => p.Gender.ToLower() == "m");
                     var numberOfPetsWith4Legs = petData.Count(p => p.NumberOfLegs == 4);
                     var averageAgeOfDogs = petData.Where(p => p is Dog).Average(p => p.Age);
-                    var reptileProblems = from pet in petData
+                    var reptileProblems = (from pet in petData
                                           where pet is Reptile
-                                          select pet.Problem;
-                    var mammalNames = from pet in petData
+                                          select pet.Problem).ToList();
+                    var mammalNames = (from pet in petData
                                       where pet is Mammal
-                                      select pet.Name;
+                                      select pet.Name).ToList();
                     return new PetAnalysisResult(numberOfMalePets, numberOfPetsWith4Legs, averageAgeOfDogs, reptileProblems, mammalNames);
                 // }
             }
