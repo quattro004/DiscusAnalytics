@@ -85,7 +85,10 @@ namespace EhrLib
             {
                 using (Aes myAes = Aes.Create())
                 {
-                    var petData = JsonConvert.SerializeObject(pets);
+                    var petData = JsonConvert.SerializeObject(pets, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.All
+                    });
                     // byte[] encrypted = EncryptStringToBytes_Aes(petData, myAes.Key, myAes.IV);
                     // File.WriteAllBytes(PetRepoPath, encrypted);
                     File.WriteAllText(PetRepoPath, petData);

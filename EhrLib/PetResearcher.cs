@@ -28,7 +28,11 @@ namespace EhrLib
                 // using (Aes myAes = Aes.Create())
                 // {
                 //     var decryptedData = DecryptStringFromBytes_Aes(File.ReadAllBytes(petRepoPath), myAes.Key, myAes.IV);
-                    var petData = JsonConvert.DeserializeObject<IEnumerable<Pet>>(File.ReadAllText(petRepoPath));
+                    var petData = JsonConvert.DeserializeObject<IEnumerable<Pet>>(File.ReadAllText(petRepoPath),
+                        new JsonSerializerSettings
+                        {
+                            TypeNameHandling = TypeNameHandling.All
+                        });
                     var numberOfMalePets = petData.Count(p => p.Gender.ToLower() == "m");
                     var numberOfPetsWith4Legs = petData.Count(p => p.NumberOfLegs == 4);
                     var averageAgeOfDogs = petData.Where(p => p is Dog).Average(p => p.Age);

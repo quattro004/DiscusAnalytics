@@ -79,7 +79,7 @@ namespace EhrLibTests
             // Can run the VetEhr program to create the repo
             // I ran into problems with encryption on Ubuntu, File.Encrypt wasn't supported and the existing code
             // is getting a invalid padding exception.
-            var results = petResearcher.Analyze("/home/reese/src/DiscusAnalytics/VetEhr/bin/Debug/netcoreapp3.0/PetRepo/Pets.json");
+            var results = petResearcher.Analyze("/home/reese/src/DiscusAnalytics/EhrLibTests/bin/Debug/netcoreapp3.0/PetRepo/Pets.json");
 
             results.NumberOfMalePets.Should().Be(6);
             results.NumberOfPetsWith4Legs.Should().Be(5);
