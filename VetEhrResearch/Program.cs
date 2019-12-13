@@ -24,13 +24,17 @@ namespace VetEhrResearch
                 var results = petResearcher.Analyze(config["petRepo"]);
                 
                 Console.WriteLine("There are {0} pets that are male.", results.NumberOfMalePets);
+                Console.WriteLine();
                 Console.WriteLine("There are {0} pets that have 4 legs.", results.NumberOfPetsWith4Legs);
+                Console.WriteLine();
                 Console.WriteLine("The average age of dogs is {0}.", results.AverageAgeOfDogs);
+                Console.WriteLine();
                 Console.WriteLine("All the repile problems are:");
                 foreach (var reptileProblem in results.ReptileProblems)
                 {
                     Console.WriteLine(reptileProblem);
                 }
+                Console.WriteLine();
                 Console.WriteLine("The names of all mammal pets are:");
                 foreach (var mammalName in results.MammalNames)
                 {
